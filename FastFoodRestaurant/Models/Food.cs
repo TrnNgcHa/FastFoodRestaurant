@@ -28,7 +28,7 @@ namespace FastFoodRestaurant.Models
 
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Hình ảnh")]
-        public string? ImageURL { get; set; };
+        public string? ImageURL { get; set; }
 
         
         [Display(Name = "Calo (kCal)")]

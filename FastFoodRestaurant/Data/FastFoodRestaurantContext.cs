@@ -15,5 +15,6 @@ namespace FastFoodRestaurant.Data
         }
 
         public DbSet<FastFoodRestaurant.Models.Food> Food { get; set; } = default!;
+        public DbSet<FastFoodRestaurant.Models.Order> Order { get; set; } = default!;
     }
 }

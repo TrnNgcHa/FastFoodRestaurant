@@ -1,0 +1,53 @@
+﻿
+@page
+@model FastFoodRestaurant.Pages.Menu.OrderModel
+@{
+}
+
+<h2>Đặt món: @Model.Food.Name</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Order.FoodId" />
+
+    <div class="form-group">
+        <label>Tên khách hàng</label>
+        <input asp-for="Order.CustomerName" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Số điện thoại</label>
+        <input asp-for="Order.Phone" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Địa chỉ giao hàng</label>
+        <input asp-for="Order.Address" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Số lượng</label>
+        <input asp-for="Order.Quantity" type="number" class="form-control" value="1" min="1" />
+    </div>
+
+    <div class="form-group mt-3">
+        <label>Tổng tiền dự kiến:</label>
+        <h4 id="displayTotalPrice" class="text-danger">@Model.Food.Price.ToString("N0") VNĐ</h4>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Xác nhận đặt món</button>
+</form>
+
+@section Scripts {
+    <script>
+        const inputQuantity = document.getElementById('inputQuantity');
+        const foodPrice = parseFloat(document.getElementById('foodPrice').value);
+        const displayTotal = document.getElementById('displayTotalPrice');
+
+        inputQuantity.addEventListener('input', function() {
+            const quantity = parseInt(inputQuantity.value) || 0;
+            const total = quantity * foodPrice;
+            // Định dạng hiển thị tiền tệ
+            displayTotal.innerText = total.toLocaleString('vi-VN') + " VNĐ";
+        });
+    </script>
+}
