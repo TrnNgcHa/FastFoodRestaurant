@@ -25,51 +25,64 @@ public static class SeedData
             context.Food.AddRange(
                 new Food
                 {
-                    Name = "Cheeseburger",
-                    Price = 30000,
+                    Name = "Hamburger Bò",
                     Category = "Burger",
-                    Description = "Một chiếc cheeseburger ngon miệng với đầy đủ topping.",
-                    ImageURL = "https://example.com/images/cheeseburger.jpg",
-                    Calories = 750,
-                    Protein = 40,
-                    Fat = 45
+                    Description = "Hamburger bò nướng thơm ngon với xà lách, cà chua và phô mai.",
+                    Price = 50000,
+                    Calories = 550,
+                    Protein = 30,
+                    Fat = 25,
+                    ImageURL = "https://sf-static.upanhlaylink.com/img/image_20260116b3709f17f10f3035764f5193c55a960a.jpg"
                 },
 
                 new Food
                 {
-                    Name = "Veggie Pizza",
-                    Price = 80000,
-                    Category = "Pizza",
-                    Description = "Một chiếc pizza chay lành mạnh với nhiều loại rau tươi.",
-                    ImageURL = "https://example.com/images/veggie_pizza.jpg",
-                    Calories = 600,
-                    Protein = 20,
-                    Fat = 25
+                    Name = "Hamburger Gà",
+                    Category = "Burger",
+                    Description = "Hamburger gà nướng thơm ngon kèm rau tươi và sốt mayonnaise.",
+                    Price = 50000,
+                    Calories = 450,
+                    Protein = 35,
+                    Fat = 15,
+                    ImageURL = "https://sf-static.upanhlaylink.com/img/image_202601168e78013d0cc96c19ec1d7624929e7fdb.jpg"
                 },
 
                 new Food
                 {
-                    Name = "Caesar Salad",
-                    Price = 25000,
-                    Category = "Extra",
-                    Description = "Rau xà lách romaine giòn kết hợp với sốt Caesar và bánh mì nướng.",
-                    ImageURL = "https://example.com/images/caesar_salad.jpg",
-                    Calories = 350,
-                    Protein = 10,
-                    Fat = 20
-                },
-
-                new Food
-                {
-                    Name = "Chocolate Milkshake",
-                    Price = 20000,
+                    Name = "Coca Cola",
                     Category = "Drinks",
-                    Description = "Một ly sữa lắc socola béo ngậy, phủ kem tươi lên trên.",
-                    ImageURL = "https://example.com/images/chocolate_milkshake.jpg",
-                    Calories = 500,
-                    Protein = 15,
-                    Fat = 18
+                    Description = "Nước giải khát Coca Cola mát lạnh giúp giải khát tức thì.",
+                    Price = 15000,
+                    Calories = 150,
+                    Protein = 0,
+                    Fat = 0,
+                    ImageURL = "https://sf-static.upanhlaylink.com/img/image_202601162cc9b44e11fb99e818f50c73bc86680d.jpg"
+                },
+
+                new Food
+                {
+                    Name = "Pepsi",
+                    Category = "Drinks",
+                    Description = "Nước ngọt Pepsi ướp lạnh mang lại cảm giác sảng khoái.",
+                    Price = 15000,
+                    Calories = 150,
+                    Protein = 0,
+                    Fat = 0,
+                    ImageURL = "https://sf-static.upanhlaylink.com/img/image_202601168006d7de87ad6ce5b7872dd6e334db83.jpg"
+                },
+                new Food
+                {
+                    Name = "Pizza Hawaii",
+                    Category = "Pizza",
+                    Description = "Pizza thơm ngon phủ giăm bông và dứa ngọt.",
+                    Price = 80000,
+                    Calories = 700,
+                    Protein = 25,
+                    Fat = 30,
+                    ImageURL = "https://sf-static.upanhlaylink.com/img/image_20260116f6a13576543e35c82858634cd7f10260.jpg"
                 }
+
+
             );
 
             context.SaveChanges();

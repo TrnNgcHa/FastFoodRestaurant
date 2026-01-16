@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static System.Net.WebRequestMethods;
 
 namespace FastFoodRestaurant.Models
 {
@@ -6,7 +7,6 @@ namespace FastFoodRestaurant.Models
     {
         public int Id { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         [Display(Name = "Tên món ăn")]
@@ -28,7 +28,7 @@ namespace FastFoodRestaurant.Models
 
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Hình ảnh")]
-        public string? ImageURL { get; set; }
+        public string? ImageURL { get; set; };
 
         
         [Display(Name = "Calo (kCal)")]
