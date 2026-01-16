@@ -28,7 +28,7 @@ public static class SeedData
                     Name = "Cheeseburger",
                     Price = 30000,
                     Category = "Burger",
-                    Description = "A delicious cheeseburger with all the fixings.",
+                    Description = "Một chiếc cheeseburger ngon miệng với đầy đủ topping.",
                     ImageURL = "https://example.com/images/cheeseburger.jpg",
                     Calories = 750,
                     Protein = 40,
@@ -40,7 +40,7 @@ public static class SeedData
                     Name = "Veggie Pizza",
                     Price = 80000,
                     Category = "Pizza",
-                    Description = "A healthy veggie pizza loaded with fresh vegetables.",
+                    Description = "Một chiếc pizza chay lành mạnh với nhiều loại rau tươi.",
                     ImageURL = "https://example.com/images/veggie_pizza.jpg",
                     Calories = 600,
                     Protein = 20,
@@ -51,8 +51,8 @@ public static class SeedData
                 {
                     Name = "Caesar Salad",
                     Price = 25000,
-                    Category = "Đồ ăn kèm",
-                    Description = "Crisp romaine lettuce with Caesar dressing and croutons.",
+                    Category = "Extra",
+                    Description = "Rau xà lách romaine giòn kết hợp với sốt Caesar và bánh mì nướng.",
                     ImageURL = "https://example.com/images/caesar_salad.jpg",
                     Calories = 350,
                     Protein = 10,
@@ -63,14 +63,15 @@ public static class SeedData
                 {
                     Name = "Chocolate Milkshake",
                     Price = 20000,
-                    Category = "Thức uống",
-                    Description = "A creamy chocolate milkshake topped with whipped cream.",
+                    Category = "Drinks",
+                    Description = "Một ly sữa lắc socola béo ngậy, phủ kem tươi lên trên.",
                     ImageURL = "https://example.com/images/chocolate_milkshake.jpg",
                     Calories = 500,
                     Protein = 15,
                     Fat = 18
                 }
             );
+
             context.SaveChanges();
         }
     }

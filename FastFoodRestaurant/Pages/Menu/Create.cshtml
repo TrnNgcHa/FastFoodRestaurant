@@ -5,64 +5,93 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Food</h4>
+<h1>Thêm món ăn</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-4">
+                <label asp-for="Food.Category" class="control-label fw-bold mb-3 d-block">Danh mục</label>
+                <div class="d-flex flex-wrap gap-2">
+                    @{
+                            var danhMuc = new Dictionary<string, string> {
+                                        {"Burger", "Burger"}, {"Pizza", "Pizza"}, {"FriedChicken", "Gà rán"},
+                                        {"Sandwich", "Sandwich"}, {"HotDog", "Hot Dog"}, {"Fries", "Khoai tây"},
+                                        {"Combo", "Combo"}, {"Drinks", "Đồ uống"}, {"Desserts", "Tráng miệng"},{"Extra", "Đồ ăn kèm" }, {"Misc", "Khác"}
+                                        };
+
+                        foreach (var item in danhMuc)
+                        {
+                            <input type="radio" class="btn-check" asp-for="Food.Category"
+                                   value="@item.Key" id="cat-@item.Key" autocomplete="off">
+                            <label class="btn btn-outline-warning rounded-pill px-3" for="cat-@item.Key">
+                                @item.Value
+                            </label>
+                        }
+                    }
+                </div>
+                <span asp-validation-for="Food.Category" class="text-danger small mt-2 d-block"></span>
+            </div>
+
+            
             <div class="form-group">
-                <label asp-for="Food.Name" class="control-label"></label>
+                <label asp-for="Food.Name" class="control-label fw-bold mb-3 d-block">Tên món ăn</label>
                 <input asp-for="Food.Name" class="form-control" />
                 <span asp-validation-for="Food.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Food.Price" class="control-label"></label>
+                <label asp-for="Food.Price" class="control-label fw-bold mb-3 d-block">Giá tiền</label>
                 <input asp-for="Food.Price" class="form-control" />
                 <span asp-validation-for="Food.Price" class="text-danger"></span>
             </div>
+            
+
+
             <div class="form-group">
-                <label asp-for="Food.Category" class="control-label"></label>
-                <input asp-for="Food.Category" class="form-control" />
-                <span asp-validation-for="Food.Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Food.Description" class="control-label"></label>
+                <label asp-for="Food.Description" class="control-label fw-bold mb-3 d-block">Mô tả</label>
                 <input asp-for="Food.Description" class="form-control" />
                 <span asp-validation-for="Food.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Food.ImageURL" class="control-label"></label>
+                <label asp-for="Food.ImageURL" class="control-label fw-bold mb-3 d-block">Link ảnh</label>
                 <input asp-for="Food.ImageURL" class="form-control" />
                 <span asp-validation-for="Food.ImageURL" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Food.Calories" class="control-label"></label>
+                <label asp-for="Food.Calories" class="control-label fw-bold mb-3 d-block">Calo (kCal)</label>
                 <input asp-for="Food.Calories" class="form-control" />
                 <span asp-validation-for="Food.Calories" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Food.Protein" class="control-label"></label>
+                <label asp-for="Food.Protein" class="control-label fw-bold mb-3 d-block">Protein (g)</label>
                 <input asp-for="Food.Protein" class="form-control" />
                 <span asp-validation-for="Food.Protein" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Food.Fat" class="control-label"></label>
+                <label asp-for="Food.Fat" class="control-label fw-bold mb-3 d-block">Chất béo (g)</label>
                 <input asp-for="Food.Fat" class="form-control" />
                 <span asp-validation-for="Food.Fat" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <button type="submit" value="Create" class="btn btn-primary" >Thêm</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Trở lại danh sách</a>
 </div>
+
+<style>
+    /* Làm cho nút nổi bật hơn khi được chọn */
+    .btn-check:checked + .btn-outline-warning {
+        background-color: #d43d02;
+        color: #000;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+</style>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
